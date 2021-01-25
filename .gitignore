@@ -1,0 +1,10 @@
+.DS_Store
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+soln/*.tex
+soln/*.cls
+notebooks
+.ipynb_checkpoints

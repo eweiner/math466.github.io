@@ -1,0 +1,58 @@
+\documentclass[12pt,letterpaper,cm]{hmcpset}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{enumerate}
+
+% info for header block in upper right hand corner
+\name{\_\_\_\_\_\_\_\_\_\_\_\_}
+\class{Math 389L}
+\assignment{Problem Set 4}
+\duedate{Tuesday, February 26, 2019}
+\setlength\parindent{0pt}
+
+\newcommand\m[1]{\begin{bmatrix} #1 \end{bmatrix}}
+\newcommand\R{\mathbb{R}}
+\newcommand\A{\boldsymbol{A}}
+\renewcommand\P{\boldsymbol{P}}
+\renewcommand\S{\boldsymbol{S}}
+\newcommand\C{\boldsymbol{C}}
+\renewcommand\H{\boldsymbol{H}}
+\newcommand\D{\boldsymbol{D}}
+\renewcommand\b{\boldsymbol{b}}
+
+\begin{document}
+
+
+\begin{problem}[1]
+    Suppose $\A\in\R^{n\times d}$. This problem will ask you to compare the performance of applying different sketches to a matrix. You can check the asymptotics online, but your solutions should provide explicit accounting of the number of flops required to apply these sketches, including relevant constants. Assume we can use the standard algorithms like regular matrix multiplication or fast Fourier/Hadamard transforms, but not fast matrix multiplication like Strassen's algorithm.
+    \begin{enumerate}[(a)]
+        \item How many floating point operations does it take in general to apply the sketch $\S\in\R^{k\times n}$ to find $\S\A$, when $\S$ is a Gaussian sketch? That is, each $\S_{ij} \sim \mathcal{N}(0,\tfrac{1}{k})$ independently.
+        \item How many floating point operations does it take in general to apply the sketch $\S\in\R^{k\times n}$ to find $\S\A$, when $\S$ is a Fast Johnson Lindenstrauss Transformation? That is, $\S = \sqrt{\tfrac{n}{k}}\P\H\D$ where $\D$ is a diagonal matrix with $\D_{ii}\sim \operatorname{Unif}\{\pm 1\}$, $\H$ is an orthonormal Hadamard transformation, and $\P\in\R^{k\times n}$ selects a (uniformly choseen) random subset of $k$ rows.
+        \item How many floating point operations does it take in general to apply the sketch $\S\in\R^{k\times n}$ to find $\S\A$, when $\S$ is a CountSketch/Clarkson-Woodruff Transform?
+    \end{enumerate}
+\end{problem}
+
+\begin{solution}
+    \vfill
+\end{solution}
+
+\begin{problem}[2]
+    Which of the sketches shown in Problem 1 would you want to use when your matrix $\A$ is so large that you are only able to read it row-by-row in one pass to compute $\S\A$? For this sketch, give an algorithm which computes $\S\A$ as you stream over the rows of $\A$ in this manner while using memory independent of $n$ and report the number of floating point operations used.
+\end{problem}
+
+\begin{solution}
+    \vfill
+\end{solution}
+
+\begin{problem}[3]
+    In a language of your choice, implement methods to compute $\S\A$ for all three sketching matrices $\S$ from Problem 1 in a way that matches the flop-counts you derived in Problem 1. For the same matrix $\A$ used in the bike-sharing regression problem in Problem Set 3, compute $\S\A$ using each of the methods you implemented and report the average time of computation over 1000 runs. Does the speed ranking match what you would expect based on the theory?
+\end{problem}
+
+\begin{solution}
+    \vfill
+\end{solution}
+\clearpage
+
+
+\end{document}
